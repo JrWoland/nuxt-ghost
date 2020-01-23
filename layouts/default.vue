@@ -1,13 +1,29 @@
 <template>
   <div>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <nuxt-link to="/" class="logo">Marcin Kozicki</nuxt-link>
+
+          <nav>
+            <ul>
+              <li><nuxt-link to="/who">Who?</nuxt-link></li>
+              <li><nuxt-link to="/posts">Posts</nuxt-link></li>
+              <li><nuxt-link to="/contact">Contact</nuxt-link></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
     <nuxt />
   </div>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap&subset=latin-ext');
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

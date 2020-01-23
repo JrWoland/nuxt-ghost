@@ -1,35 +1,28 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxt-ghost-app
-      </h1>
-      <h2 class="subtitle">
-        My beautiful Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <h2>My latest thoughts</h2>
+    <ul>
+      <li v-for="(post, index) in posts" :key="index">
+        <img :src="post.feature_image" alt="" />
+        <div class="content">
+          <span>Author: Marcin K.</span>
+          <nuxt-link :to="{ path: post.slug }">{{ post.title }}</nuxt-link>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { getPosts } from '../api/posts'
 
 export default {
-  components: {
-    Logo
+  async asyncData() {
+    const posts = await getPosts()
+    // console.log(posts)
+
+    return { posts }
   }
 }
 </script>
