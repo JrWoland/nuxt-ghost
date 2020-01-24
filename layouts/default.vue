@@ -3,7 +3,7 @@
     <header>
       <div class="container">
         <div class="navbar">
-          <nuxt-link to="/" class="logo">Marcin Kozicki</nuxt-link>
+          <nuxt-link to="/" class="logo">BLOG</nuxt-link>
           <nav>
             <ul>
               <li><nuxt-link to="/who">Who?</nuxt-link></li>
@@ -71,7 +71,7 @@ header {
     display: flex;
     li a {
       font-weight: normal;
-      padding: 0.5em;
+      padding: 0 1em 0;
     }
   }
 }

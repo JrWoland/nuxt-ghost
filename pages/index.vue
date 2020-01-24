@@ -12,7 +12,7 @@
     </div>
 
     <div class="container">
-      <main>
+      <main class="container__main">
         <h2>My latest thoughts</h2>
         <ul>
           <li v-for="(post, index) in posts" :key="index">
@@ -100,7 +100,7 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
-  main li {
+  .container__main li {
     display: grid;
     grid-template-columns: 180px auto;
     grid-column-gap: 1em;
