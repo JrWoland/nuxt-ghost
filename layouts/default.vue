@@ -4,7 +4,6 @@
       <div class="container">
         <div class="navbar">
           <nuxt-link to="/" class="logo">Marcin Kozicki</nuxt-link>
-
           <nav>
             <ul>
               <li><nuxt-link to="/who">Who?</nuxt-link></li>
@@ -15,11 +14,14 @@
         </div>
       </div>
     </header>
+
+    <!-- this is index.vue -->
     <nuxt />
+    <!-- this is index.vue -->
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap&subset=latin-ext');
 html {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -40,32 +42,41 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+header {
+  background: $primary-color;
+  padding: 1em 0;
+  text-align: center;
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  nav {
+    display: flex;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    li a {
+      font-weight: normal;
+      padding: 0.5em;
+    }
+  }
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+@media only screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
 }
 </style>
